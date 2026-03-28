@@ -13,9 +13,11 @@ func main() {
 	var links []string
 
 	res, err := http.Get(link)
-
+	defer res.Body.Close()
 	if err != nil {
 		fmt.Printf("there was some error in getting link specified %s and error is %v ", link, err)
 	}
+
+	http.parse
 
 }
